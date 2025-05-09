@@ -1,6 +1,6 @@
 # 🚉 Totem Vivaline API
 
-Sistema backend em Java para gerenciamento e visualização das estações da rede ferroviária Vivaline. Esta API RESTful foi desenvolvida com foco educacional e utiliza Jakarta REST, DTOs e boas práticas de desenvolvimento para fornecer uma estrutura clara e funcional.
+Sistema backend em Java para gerenciamento e visualização para o totem Vivaline. Essa API RESTful foi desenvolvida com foco educacional e utiliza Jakarta REST, DTOs e boas práticas de desenvolvimento para fornecer uma estrutura clara e funcional.
 
 ---
 
@@ -43,8 +43,8 @@ mvn clean install
 
 Acesse os endpoints via Thunder Client ou navegador.
 
-📡 Endpoints da API
-📍 /faq
+## 📡 Endpoints da API
+## 📍 /faq
 POST
 Requisição: application/json
 Resposta: application/json
@@ -55,7 +55,7 @@ Requisição: application/json
 Resposta: application/json
 Descrição: Obtém a lista de perguntas frequentes.
 
-📍 /comercios
+## 📍 /comercios
 POST
 Requisição: application/json
 Resposta: application/json
@@ -71,7 +71,7 @@ Requisição: Não exige corpo
 Resposta: application/json
 Descrição: Deleta um comércio específico pelo nome.
 
-📍 /linhas
+## 📍 /linhas
 POST
 Requisição: application/json
 Resposta: application/json
@@ -92,7 +92,7 @@ Requisição: application/json
 Resposta: application/json
 Descrição: Atualiza as informações de uma linha específica pelo ID.
 
-📍 /mapa
+## 📍 /mapa
 POST
 Requisição: application/json
 Resposta: application/json
