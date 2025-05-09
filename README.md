@@ -1,66 +1,137 @@
-# minha-api-1tdspa
+🚉 Totem Vivaline API
+Sistema backend em Java para gerenciamento e visualização das estações da rede ferroviária Vivaline. Esta API RESTful foi desenvolvida com foco educacional e utiliza Jakarta REST, DTOs e boas práticas de desenvolvimento para fornecer uma estrutura clara e funcional.
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+📚 Descrição
+Este projeto simula o backend de um totem informativo que exibe dados sobre estações de trem/metrô, incluindo nome da estação, coordenadas geográficas e as linhas disponíveis. A API permite:
 
-If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
+Listar todas as estações.
 
-## Running the application in dev mode
+Adicionar uma nova estação.
 
-You can run your application in dev mode that enables live coding using:
+Deletar estações específicas.
 
-```shell script
-./mvnw quarkus:dev
-```
+🛠️ Tecnologias Utilizadas
+Java 17+
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
+Jakarta RESTful Web Services (JAX-RS)
 
-## Packaging and running the application
+MicroProfile (Rate Limit, Timeout, Fallback)
 
-The application can be packaged using:
+RESTEasy Reactive
 
-```shell script
-./mvnw package
-```
+DTO Pattern
 
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+📁 Estrutura do Projeto
+Copiar
+Editar
+fiap.tds/
+├── dtos/
+│   └── MapaDto.java
+├── services/
+│   └── MapaService.java
+├── CardResource.java
+└── MapaResource.java
+🚀 Como usar
+📦 Requisitos
+JDK 17+
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
+Maven ou Gradle
 
-If you want to build an _über-jar_, execute the following command:
+IDE como IntelliJ ou Eclipse
 
-```shell script
-./mvnw package -Dquarkus.package.jar.type=uber-jar
-```
+▶️ Execução
+Clone o repositório:
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
+bash
+Copiar
+Editar
+git clone https://github.com/seu-usuario/totem-vivaline-api.git
+cd totem-vivaline-api
+Compile e execute com sua IDE ou via terminal:
 
-## Creating a native executable
+bash
+Copiar
+Editar
+mvn clean install
+Acesse os endpoints via Postman ou navegador.
 
-You can create a native executable using:
+📡 Endpoints da API
+📍 /faq
+POST
+Requisição: application/json
+Resposta: application/json
+Descrição: Envia uma pergunta ou contato para a FAQ.
 
-```shell script
-./mvnw package -Dnative
-```
+GET
+Requisição: application/json
+Resposta: application/json
+Descrição: Obtém a lista de perguntas frequentes.
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
+📍 /comercios
+POST
+Requisição: application/json
+Resposta: application/json
+Descrição: Adiciona um novo comércio.
 
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
+GET
+Requisição: application/json
+Resposta: application/json
+Descrição: Obtém a lista de todos os comércios.
 
-You can then execute your native executable with: `./target/minha-api-1tdspa-1.0.0-SNAPSHOT-runner`
+DELETE /comercios/{nome}
+Requisição: Não exige corpo
+Resposta: application/json
+Descrição: Deleta um comércio específico pelo nome.
 
-If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
+📍 /linhas
+POST
+Requisição: application/json
+Resposta: application/json
+Descrição: Adiciona uma nova linha.
 
-## Related Guides
+GET
+Requisição: Não exige corpo
+Resposta: application/json
+Descrição: Obtém a lista de todas as linhas.
 
-- REST ([guide](https://quarkus.io/guides/rest)): A Jakarta REST implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
+DELETE /linhas/{id}
+Requisição: Não exige corpo
+Resposta: application/json
+Descrição: Deleta uma linha específica pelo ID.
 
-## Provided Code
+PUT /linhas/{id}
+Requisição: application/json
+Resposta: application/json
+Descrição: Atualiza as informações de uma linha específica pelo ID.
 
-### REST
+📍 /mapa
+POST
+Requisição: application/json
+Resposta: application/json
+Descrição: Adiciona uma nova estação ao mapa.
 
-Easily start your REST Web Services
+GET
+Requisição: Não exige corpo
+Resposta: application/json
+Descrição: Obtém todas as estações cadastradas.
 
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+DELETE /mapa/{nome}
+Requisição: Não exige corpo
+Resposta: application/json
+Descrição: Deleta uma estação específica pelo nome.
+
+📦 Exemplo de Payload (POST /mapa)
+json
+Copiar
+Editar
+{
+  "nomeEstacao": "Estação Sé",
+  "latitude": -23.5503,
+  "longitude": -46.6339,
+  "linhas": ["Linha Vermelha", "Linha Azul"]
+}
+
+👨‍💻 Autor
+Arthur Thomas Mariano de Souza
+Estudante de Análise e Desenvolvimento de Sistemas | FIAP
+📫 LinkedIn: https://www.linkedin.com/in/arthur-thomas-mariano-941a97234/
