@@ -24,16 +24,6 @@ Este projeto simula o backend de um totem informativo que exibe dados sobre esta
 
 ---
 
-## 📁 Estrutura do Projeto
-
-fiap.tds/
-├── dtos/
-│ └── MapaDto.java
-├── services/
-│ └── MapaService.java
-├── CardResource.java
-└── MapaResource.java
-
 ## 🚀 Como usar
 
 ### 📦 Requisitos
