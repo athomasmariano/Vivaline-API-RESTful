@@ -1,50 +1,58 @@
-🚉 Totem Vivaline API
+# 🚉 Totem Vivaline API
+
 Sistema backend em Java para gerenciamento e visualização das estações da rede ferroviária Vivaline. Esta API RESTful foi desenvolvida com foco educacional e utiliza Jakarta REST, DTOs e boas práticas de desenvolvimento para fornecer uma estrutura clara e funcional.
 
-📚 Descrição
+---
+
+## 📚 Descrição
+
 Este projeto simula o backend de um totem informativo que exibe dados sobre estações de trem/metrô, incluindo nome da estação, coordenadas geográficas e as linhas disponíveis. A API permite:
 
-Listar todas as estações.
+- Listar todas as estações.
+- Adicionar uma nova estação.
+- Deletar estações específicas.
 
-Adicionar uma nova estação.
+---
 
-Deletar estações específicas.
+## 🛠️ Tecnologias Utilizadas
 
-🛠️ Tecnologias Utilizadas
-Java 17+
+- **Java 17+**
+- **Jakarta RESTful Web Services (JAX-RS)**
+- **MicroProfile (Rate Limit, Timeout, Fallback)**
+- **RESTEasy Reactive**
+- **DTO Pattern**
 
-Jakarta RESTful Web Services (JAX-RS)
+---
 
-MicroProfile (Rate Limit, Timeout, Fallback)
+## 📁 Estrutura do Projeto
 
-RESTEasy Reactive
-
-DTO Pattern
-
-📁 Estrutura do Projeto
-Copiar
-Editar
 fiap.tds/
 ├── dtos/
-│   └── MapaDto.java
+│ └── MapaDto.java
 ├── services/
-│   └── MapaService.java
+│ └── MapaService.java
 ├── CardResource.java
 └── MapaResource.java
-🚀 Como usar
-📦 Requisitos
-JDK 17+
 
-Maven ou Gradle
-
-IDE como IntelliJ ou Eclipse
-
-▶️ Execução
-Clone o repositório:
-
-bash
+yaml
 Copiar
 Editar
+
+---
+
+## 🚀 Como usar
+
+### 📦 Requisitos
+
+- **JDK 17+**
+- **Maven ou Gradle**
+- **IDE como IntelliJ ou Eclipse**
+
+### ▶️ Execução
+
+Clone o repositório:
+
+```bash
 git clone https://github.com/seu-usuario/totem-vivaline-api.git
 cd totem-vivaline-api
 Compile e execute com sua IDE ou via terminal:
@@ -130,7 +138,6 @@ Editar
   "longitude": -46.6339,
   "linhas": ["Linha Vermelha", "Linha Azul"]
 }
-
 👨‍💻 Autor
 Arthur Thomas Mariano de Souza
 Estudante de Análise e Desenvolvimento de Sistemas | FIAP
