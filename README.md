@@ -35,12 +35,12 @@ Este projeto simula o backend de um totem informativo que exibe dados sobre esta
 ### ▶️ Execução
 
 Clone o repositório:
-
-```bash
 git clone https://github.com/seu-usuario/totem-vivaline-api.git
 cd totem-vivaline-api
+
 Compile e execute com sua IDE ou via terminal:
 mvn clean install
+
 Acesse os endpoints via Thunder Client ou navegador.
 
 📡 Endpoints da API
