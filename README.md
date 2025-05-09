@@ -34,12 +34,6 @@ fiap.tds/
 ├── CardResource.java
 └── MapaResource.java
 
-yaml
-Copiar
-Editar
-
----
-
 ## 🚀 Como usar
 
 ### 📦 Requisitos
@@ -56,12 +50,8 @@ Clone o repositório:
 git clone https://github.com/seu-usuario/totem-vivaline-api.git
 cd totem-vivaline-api
 Compile e execute com sua IDE ou via terminal:
-
-bash
-Copiar
-Editar
 mvn clean install
-Acesse os endpoints via Postman ou navegador.
+Acesse os endpoints via Thunder Client ou navegador.
 
 📡 Endpoints da API
 📍 /faq
@@ -129,15 +119,13 @@ Resposta: application/json
 Descrição: Deleta uma estação específica pelo nome.
 
 📦 Exemplo de Payload (POST /mapa)
-json
-Copiar
-Editar
 {
   "nomeEstacao": "Estação Sé",
   "latitude": -23.5503,
   "longitude": -46.6339,
   "linhas": ["Linha Vermelha", "Linha Azul"]
 }
+
 👨‍💻 Autor
 Arthur Thomas Mariano de Souza
 Estudante de Análise e Desenvolvimento de Sistemas | FIAP
