@@ -1,6 +1,6 @@
-package fiap.tds;
+package fiap.tds.resources;
 
-import fiap.tds.dtos.MapaDto;
+import fiap.tds.entities.Mapa;
 import fiap.tds.services.MapaService;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -16,12 +16,12 @@ public class MapaResource {
     private final MapaService mapaService = new MapaService();
 
     @GET
-    public List<MapaDto> getMapa() {
+    public List<Mapa> getMapa() {
         return mapaService.listarEstacoes();
     }
 
     @POST
-    public Response adicionarEstacao(MapaDto novaEstacao) {
+    public Response adicionarEstacao(Mapa novaEstacao) {
         mapaService.adicionarEstacao(novaEstacao);
         return Response.status(Response.Status.CREATED).entity(novaEstacao).build();
     }

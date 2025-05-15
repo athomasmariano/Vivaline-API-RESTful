@@ -1,13 +1,13 @@
-package fiap.tds.dtos;
+package fiap.tds.entities;
 
-public class ComercioLocalDto {
+public class ComercioLocal {
     private String nome;
     private String tipo;
     private String endereco;
 
-    public ComercioLocalDto() {}
+    public ComercioLocal() {}
 
-    public ComercioLocalDto(String nome, String tipo, String endereco) {
+    public ComercioLocal(String nome, String tipo, String endereco) {
         this.nome = nome;
         this.tipo = tipo;
         this.endereco = endereco;

@@ -1,14 +1,14 @@
-package fiap.tds.dtos;
+package fiap.tds.entities;
 
-public class MapaDto {
+public class Mapa {
     private String nomeEstacao;
     private double latitude;
     private double longitude;
     private String[] linhas;
 
-    public MapaDto() {}
+    public Mapa() {}
 
-    public MapaDto(String nomeEstacao, double latitude, double longitude, String[] linhas) {
+    public Mapa(String nomeEstacao, double latitude, double longitude, String[] linhas) {
         this.nomeEstacao = nomeEstacao;
         this.latitude = latitude;
         this.longitude = longitude;

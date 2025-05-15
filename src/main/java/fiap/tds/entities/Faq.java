@@ -1,6 +1,6 @@
-package fiap.tds.dtos;
+package fiap.tds.entities;
 
-public class FaqDto {
+public class Faq {
     // Para perguntas frequentes
     private String pergunta;
     private String resposta;
@@ -9,14 +9,14 @@ public class FaqDto {
     private String email;
     private String mensagem;
 
-    public FaqDto() {}
+    public Faq() {}
 
-    public FaqDto(String pergunta, String resposta) {
+    public Faq(String pergunta, String resposta) {
         this.pergunta = pergunta;
         this.resposta = resposta;
     }
 
-    public FaqDto(String email, String mensagem, boolean contato) {
+    public Faq(String email, String mensagem, boolean contato) {
         this.email = email;
         this.mensagem = mensagem;
     }

@@ -1,7 +1,7 @@
-package fiap.tds;
+package fiap.tds.resources;
 
 import fiap.tds.services.LinhaStatusService;
-import fiap.tds.dtos.LinhaStatusDto;
+import fiap.tds.entities.LinhaStatus;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -13,30 +13,30 @@ public class LinhaStatusResource {
     private LinhaStatusService statusService = new LinhaStatusService();
 
     @GET
-    public List<LinhaStatusDto> getStatus() {
+    public List<LinhaStatus> getStatus() {
         return statusService.listarStatus();
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response addStatus(LinhaStatusDto linhaStatusDto) {
-        boolean isValid = statusService.validarStatus(linhaStatusDto);
+    public Response addStatus(LinhaStatus linhaStatus) {
+        boolean isValid = statusService.validarStatus(linhaStatus);
         if (!isValid) {
             return Response.status(Response.Status.BAD_REQUEST)
                     .entity("Status inválido")
                     .build();
         }
-        statusService.adicionarStatus(linhaStatusDto);
+        statusService.adicionarStatus(linhaStatus);
         return Response.status(Response.Status.CREATED)
-                .entity(linhaStatusDto)
+                .entity(linhaStatus)
                 .build();
     }
 
     @PUT
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateStatus(@PathParam("id") int id, LinhaStatusDto linhaStatusDto) {
-        boolean updated = statusService.atualizarStatus(id, linhaStatusDto);
+    public Response updateStatus(@PathParam("id") int id, LinhaStatus linhaStatus) {
+        boolean updated = statusService.atualizarStatus(id, linhaStatus);
         if (!updated) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Status não encontrado")

@@ -1,7 +1,7 @@
-package fiap.tds;
+package fiap.tds.resources;
 
 import fiap.tds.services.ComercioLocalService;
-import fiap.tds.dtos.ComercioLocalDto;
+import fiap.tds.entities.ComercioLocal;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -15,7 +15,7 @@ public class ComercioLocalResource {
     // GET: Listar todos os comércios
     @GET
     public Response getComercios() {
-        List<ComercioLocalDto> comercios = comercioService.listarComercios();
+        List<ComercioLocal> comercios = comercioService.listarComercios();
 
         if (comercios.isEmpty()) {
             return Response.status(Response.Status.NOT_FOUND)
@@ -29,7 +29,7 @@ public class ComercioLocalResource {
     // POST: Adicionar um novo comércio
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response addComercio(ComercioLocalDto comercio) {
+    public Response addComercio(ComercioLocal comercio) {
         // Verifica se o comércio foi adicionado com sucesso
         boolean isAdded = comercioService.adicionarComercio(comercio);
 

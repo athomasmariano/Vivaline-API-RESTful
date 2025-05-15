@@ -1,6 +1,6 @@
-package fiap.tds;
+package fiap.tds.resources;
 
-import fiap.tds.dtos.FaqDto;
+import fiap.tds.entities.Faq;
 import fiap.tds.services.FaqService;
 
 import jakarta.ws.rs.*;
@@ -17,13 +17,13 @@ public class FaqResource {
     private FaqService faqService = new FaqService();
 
     @GET
-    public List<FaqDto> getFaqs() {
+    public List<Faq> getFaqs() {
         return faqService.listarFaqs();
     }
 
     @POST
     @Path("/contato")
-    public Response enviarContato(FaqDto dto) {
+    public Response enviarContato(Faq dto) {
         String resultado = faqService.registrarContato(dto);
         return Response.ok(resultado).build();
     }

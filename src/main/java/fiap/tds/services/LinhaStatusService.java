@@ -1,38 +1,38 @@
 package fiap.tds.services;
 
-import fiap.tds.dtos.LinhaStatusDto;
+import fiap.tds.entities.LinhaStatus;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class LinhaStatusService {
-    private List<LinhaStatusDto> statusList = new ArrayList<>();
+    private List<LinhaStatus> statusList = new ArrayList<>();
 
     public LinhaStatusService() {
-        statusList.add(new LinhaStatusDto(1, "Amarela", "Operação normal"));
-        statusList.add(new LinhaStatusDto(2, "Lilás", "Operação normal"));
-        statusList.add(new LinhaStatusDto(3, "Diamante", "Operação normal"));
-        statusList.add(new LinhaStatusDto(4, "Esmeralda", "Operação normal"));
+        statusList.add(new LinhaStatus(1, "Amarela", "Operação normal"));
+        statusList.add(new LinhaStatus(2, "Lilás", "Operação normal"));
+        statusList.add(new LinhaStatus(3, "Diamante", "Operação normal"));
+        statusList.add(new LinhaStatus(4, "Esmeralda", "Operação normal"));
     }
 
-    public List<LinhaStatusDto> listarStatus() {
+    public List<LinhaStatus> listarStatus() {
         return statusList;
     }
 
-    public boolean validarStatus(LinhaStatusDto linhaStatusDto) {
-        return linhaStatusDto != null && linhaStatusDto.getNomeLinha() != null && !linhaStatusDto.getNomeLinha().isEmpty()
-                && linhaStatusDto.getStatus() != null && !linhaStatusDto.getStatus().isEmpty();
+    public boolean validarStatus(LinhaStatus linhaStatus) {
+        return linhaStatus != null && linhaStatus.getNomeLinha() != null && !linhaStatus.getNomeLinha().isEmpty()
+                && linhaStatus.getStatus() != null && !linhaStatus.getStatus().isEmpty();
     }
 
-    public void adicionarStatus(LinhaStatusDto linhaStatusDto) {
-        if (validarStatus(linhaStatusDto)) {
-            statusList.add(linhaStatusDto);
+    public void adicionarStatus(LinhaStatus linhaStatus) {
+        if (validarStatus(linhaStatus)) {
+            statusList.add(linhaStatus);
         }
     }
 
     public boolean removerStatus(int id) {
-        Optional<LinhaStatusDto> linhaStatus = statusList.stream()
+        Optional<LinhaStatus> linhaStatus = statusList.stream()
                 .filter(status -> status.getId() == id)
                 .findFirst();
 
@@ -44,13 +44,13 @@ public class LinhaStatusService {
     }
 
     // Método para atualizar o status de uma linha
-    public boolean atualizarStatus(int id, LinhaStatusDto linhaStatusDto) {
-        Optional<LinhaStatusDto> linhaStatus = statusList.stream()
+    public boolean atualizarStatus(int id, LinhaStatus linhaStatusDto) {
+        Optional<LinhaStatus> linhaStatus = statusList.stream()
                 .filter(status -> status.getId() == id)
                 .findFirst();
 
         if (linhaStatus.isPresent()) {
-            LinhaStatusDto statusToUpdate = linhaStatus.get();
+            LinhaStatus statusToUpdate = linhaStatus.get();
             statusToUpdate.setStatus(linhaStatusDto.getStatus());  // Atualiza o status da linha
             return true;
         }
